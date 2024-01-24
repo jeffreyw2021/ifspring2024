@@ -46,12 +46,12 @@ body {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    padding: 3rem 4rem;
+    padding: 3rem;
     flex-shrink: 0;
     scroll-snap-align: start;
 }
 .sceneContent {
-    width: 92%;
+    width: 98%;
 }
 
 .dialogList {
