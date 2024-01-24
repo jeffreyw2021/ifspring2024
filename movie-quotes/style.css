@@ -3,13 +3,104 @@
 font-family: 'Passion One', sans-serif;
 font-family: 'Roboto Slab', serif; 
 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* 
+font-family: 'Roboto Condensed', sans-serif; 
+*/
+
+html {
+    font-size: 140%;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --black: #080808;
+    --gray: #696969;
+    --white: #fff;
+    font-family: 'Roboto Slab', serif; 
 }
+*::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body {
+    background-color: var(--black);
+}
+
 .container {
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+}
+
+.scene {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 3rem 4rem;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+.sceneContent {
+    width: 92%;
+}
+
+.dialogList {
+    list-style: none;
+}
+
+.dialogItem {
+    list-style: none;
+    margin-bottom: 1.8rem;
+}
+
+.dialogItem p {
+    color: var(--white);
+}
+
+.dialogItem p:first-child {
+    font-size: 1.1rem;
+    font-family: 'Roboto Condensed', serif;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0rem;
+}
+
+.dialogItem p:last-child {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.15;
+}
+.actionDescription {
+    font-size: 1.2rem !important;
+    color: var(--gray) !important;
+}
+
+.paginationContainer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination {
+    min-width: 12vw;
+    height: 50px;
+    background: rgba(128, 128, 128, 0.5); 
+    border-radius: 100px;
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
 }
