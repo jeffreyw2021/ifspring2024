@@ -10,6 +10,11 @@
 </head>
 
 <body>
+
+    <div class="header">
+        <h1>GHOSTBUSTERS (1984) QUOTES</h1>
+    </div>
+
     <div class="container">
 
         <!-- Scene 1 -->
@@ -115,10 +120,65 @@
 
         <div class="paginationContainer">
             <div class="pagination">
-                
+                <div class="paginationButton previousPage">
+                    <i class="fas fa-angle-left"></i>
+                </div>
+                <div class="paginationButton nextPage">
+                    <i class="fas fa-angle-right"></i>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scenes = document.querySelectorAll('.scene');
+            const prevButton = document.querySelector('.previousPage');
+            const nextButton = document.querySelector('.nextPage');
+            let currentScene = 0;
+    
+            function updateScene() {
+                scenes[currentScene].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+    
+            function getCurrentScene() {
+                let closestScene = 0;
+                let minDistance = Number.MAX_VALUE;
+    
+                scenes.forEach((scene, index) => {
+                    let distance = Math.abs(scene.getBoundingClientRect().top);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestScene = index;
+                    }
+                });
+    
+                return closestScene;
+            }
+    
+            prevButton.addEventListener('click', () => {
+                if (currentScene > 0) {
+                    currentScene--;
+                    updateScene();
+                }
+            });
+    
+            nextButton.addEventListener('click', () => {
+                if (currentScene < scenes.length - 1) {
+                    currentScene++;
+                    updateScene();
+                }
+            });
+    
+            window.addEventListener('scroll', () => {
+                let newScene = getCurrentScene();
+                if (newScene !== currentScene) {
+                    currentScene = newScene;
+                }
+            });
+        });
+    </script>
+    
 </body>
 
 </html>
