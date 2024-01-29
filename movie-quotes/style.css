@@ -19,8 +19,8 @@ html {
     --black: #080808;
     --gray: #818181;
     --white: #fff;
-    --hightlight: rgba(255, 0, 0, 0.8);
-    --titleHighlight: rgba(0, 102, 255, 0.8);
+    --hightlight: rgba(255, 115, 0, 0.8);
+    --titleHighlight: rgba(255, 51, 0, 0.8);
     font-family: 'Roboto Slab', serif; 
 }
 *::-webkit-scrollbar {

@@ -138,7 +138,10 @@
             let currentScene = 0;
     
             function updateScene() {
-                scenes[currentScene].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                scenes[currentScene].scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
             }
     
             function getCurrentScene() {
