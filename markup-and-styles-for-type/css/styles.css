@@ -1,0 +1,58 @@
+html {
+    color: grey;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 15pt;
+}
+
+body {
+    margin: 10%;
+}
+
+h1 {
+    color: black;
+    letter-spacing: -0.0em;
+}
+
+p {
+    font-size: 13pt;
+    line-height: 1.4;
+}
+
+sup {
+    font-size: 6%;
+}
+
+dfn {
+    font-weight: bold;
+}
+
+small {
+    font-style: italic;
+}
+
+aside {
+    text-align: center;
+}
+
+cite {
+    text-align: right;
+    display: block;
+}
+
+article {
+    margin: 6rem 0;
+}
+
+section {
+    margin: 2.5rem 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+code {
+    color: steelblue;
+}
+
