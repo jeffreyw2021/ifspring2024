@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let circleDiv = document.createElement("div");
             circleDiv.className = 'circle';
-            circleDiv.style.animation = `continuousRotate ${10 - (i * 1.5)}s linear infinite`;
+            circleDiv.style.animation = `continuousRotate ${6 - (i * 0.2)}s linear infinite`;
 
             let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
             svg.setAttribute('width', '1200');
