@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let circleDiv = document.createElement("div");
             circleDiv.className = 'circle';
-            circleDiv.style.animation = `continuousRotate ${30 - (i * 5)}s linear infinite`;
+            circleDiv.style.animation = `continuousRotate ${10 - (i * 1.5)}s linear infinite`;
 
             let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
             svg.setAttribute('width', '1200');
@@ -91,9 +91,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const svg = document.querySelector('svg');
+    function resetCircleAnimation() {
+        const circles = document.querySelectorAll('.circle');
+        circles.forEach(circle => {
+            circle.classList.add('noRotate');
+        });
+    
+        setTimeout(() => {
+            circles.forEach(circle => {
+
+                circle.classList.remove('noRotate');
+            });
+        }, 50); 
+    }
 
     function moveOn() {
         if (currentIndex + 5 < fetchedLyrics.length) {
+            resetCircleAnimation(); 
             document.querySelectorAll('#lyricContainer svg').forEach(svg => {
                 svg.classList.add('scaleUp');
             });
@@ -119,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function moveDown() {
         if (currentIndex > 0) {
+            resetCircleAnimation(); 
             document.querySelectorAll('#lyricContainer svg').forEach(svg => {
                 svg.classList.add('scaleDown');
             });
