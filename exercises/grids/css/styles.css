@@ -1,0 +1,35 @@
+.grid img {
+    width: 150px;
+}
+
+.grid {
+    padding: 0;
+}
+
+.grid li {
+    width: 25%;
+    font-size: 0.8rem;
+    display: block;
+}
+
+.using-inline-block li {
+    display: inline-block;
+}
+
+.using-inline-block {
+    font-size: 0;
+}
+
+.using-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.using-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.using-grid li {
+    width: 100%;
+}
