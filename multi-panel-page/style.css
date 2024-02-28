@@ -29,7 +29,7 @@ h1 {
 h2 {
     font-size: 30px;
     text-align: center;
-    text-shadow: 2px 1.5px 3.5px gba(0, 0, 0, 0.4);
+    text-shadow: 2px 1.5px 3.5px rgba(0, 0, 0, 0.4);
 }
 
 h3 {
