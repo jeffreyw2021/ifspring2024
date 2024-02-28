@@ -15,7 +15,7 @@ header {
 }
 
 header .container {
-    padding: 166px 0 184px 0;
+    padding: 170px 0 180px 0;
     text-align: center;
 }
 
@@ -23,13 +23,13 @@ h1 {
     font-size: 80px;
     margin-bottom: 10px;
     line-height: 1;
-    text-shadow: 2px 2px 4px #00000080;
+    text-shadow: 2px 1.5px 3.5px rgba(0, 0, 0, 0.4);
 }
 
 h2 {
     font-size: 30px;
     text-align: center;
-    text-shadow: 2px 2px 4px #00000080;
+    text-shadow: 2px 1.5px 3.5px gba(0, 0, 0, 0.4);
 }
 
 h3 {
@@ -67,10 +67,7 @@ p {
     height: 26rem;
 }
 
-#photo-block h2,
-h3,
-h4,
-p {
+#photo-block h2,h3,h4,p {
     color: white;
 }
 
