@@ -1,0 +1,51 @@
+/* ------ STATIC ------ */
+.static-example .positioned-element {
+    background-color: green;
+    /* left: 100px; */
+}
+
+/* ------ RELATIVE ------ */
+.relative-example .positioned-element {
+    background-color: lightblue;
+    position: relative;
+    left: 100px;
+    top: 50px;
+}
+
+/* ------ ABSOLUTE ------ */
+.absolute-example .positioned-element {
+    background-color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.absolute-example {
+    position: relative;
+}
+/* ------ FIXED ------ */
+.fixed-example .positioned-element {
+    background-color: purple;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* ------ STICKY ------ */
+.sticky-example .positioned-element {
+    background-color: orange;
+    position: sticky;
+    top: 50px;
+}
+
+/* ------ RELATIVE ------ */
+.relative-example .positioned-element {
+    z-index: -1; 
+}
+
+.fixed-example .positioned-element {
+    z-index: 9999; 
+}
+
+
+
