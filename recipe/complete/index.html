@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loco Moco Recipe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="assets/locomoco1.jpg" alt="Loco Moco">
+            <div class="ingridient-container">
+                <div class="ingrid-title">
+                    <h2>Ingridients for</h2>
+                    <div class="btn-group">
+                        <button class="btn" title="decrease"><i class="fa-minus fa-solid"></i></button>
+                        <p>1</p>
+                        <button class="btn" title="increase"><i class="fa-plus fa-solid"></i></button>
+                    </div>
+                </div>
+                <div class="ingridients">
+                    <div class="regular-ingrid">
+                        <div class="ingridient">
+                            <p class="ingrid-name">Egg</p>
+                            <p class="ingrid-count"><span class="in-num">1</span></p>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">unsalted butter</p>
+                            <p class="ingrid-count"><span class="in-num">2</span> tbsp</p>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">medium sized sweet onion (optional)</p>
+                            <p class="ingrid-count"><span class="in-num">1/2</span></p>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">sliced mushroom (optional)</p>
+                            <p class="ingrid-count"><span class="in-num">3/4</span> cup</p>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">green onions for garnishing</p>
+                            <p class="ingrid-count">A little</p>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">cooked rice</p>
+                            <p class="ingrid-count"><span class="in-num">1</span> bowl</p>
+                        </div>
+                    </div>
+                    <div class="parent-ingrid">
+                        <div class="ingridient">
+                            <p class="ingrid-name">Hamburger Patties</p>
+                            <div class="ingrid-count">
+                                <span class="in-num">2</span>
+                                <div class="ingrid-detail-btn">
+                                    <input type="checkbox" id="hamburger-detail-btn" title="Show Details">
+                                    <i class="fa-angle-down fa-solid"></i>
+                                    <i class="fa-angle-up fa-solid"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">Ground Beef</p>
+                            <p class="ingrid-count"><span class="in-num">1 1/2</span> lb</p>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">Worcestershire Sauce</p>
+                            <p class="ingrid-count"><span class="in-num">1</span> tbsp</p>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">Seasoning Salt</p>
+                            <p class="ingrid-count"><span class="in-num">1 1/2</span> tsp</p>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">Garlic Powder</p>
+                            <p class="ingrid-count"><span class="in-num">1</span> tsp</p>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">Black Pepper</p>
+                            <p class="ingrid-count"><span class="in-num">1/2</span> tsp</p>
+                        </div>
+                    </div>
+                    <div class="parent-ingrid">
+                        <div class="ingridient">
+                            <p class="ingrid-name">Gravy</p>
+                            <div class="ingrid-count">
+                                <div class="ingrid-detail-btn">
+                                    <input type="checkbox" id="gravy-detail-btn" title="Show Details">
+                                    <i class="fa-angle-down fa-solid"></i>
+                                    <i class="fa-angle-up fa-solid"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">Beef Stock</p>
+                            <p class="ingrid-count"><span class="in-num">1 1/2</span> cup</p>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">Shoyu (Soy Sauce)</p>
+                            <p class="ingrid-count"><span class="in-num">4</span> tsp</p>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">Worcestershire Sauce</p>
+                            <p class="ingrid-count"><span class="in-num">1</span> tsp</p>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">Ketchup</p>
+                            <p class="ingrid-count"><span class="in-num">2</span> tsp</p>
+                        </div>
+                        <div class="ingridient">
+                            <p class="ingrid-name">Cornstarch</p>
+                            <p class="ingrid-count"><span class="in-num">5</span> tsp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <img class="hidden-hero-img" src="assets/locomoco2.jpg" alt="Loco Moco">
+            <div class="title">
+                <h1>Hawaiian Loco Moco</h1>
+            </div>
+            <div class="tag-container">
+                <div class="tag">Animal Protein</div>
+                <div class="tag">Contains Gluten</div>
+                <div class="tag">Contains Soy</div>
+            </div>
+            <div class="desc">
+                Loco Moco, a beloved Hawaiian comfort dish, features layers of warm white rice, a tender hamburger
+                patty, a perfectly fried egg, and is generously smothered in a rich, savory gravy. This culinary delight
+                is a versatile meal, equally perfect for breakfast, lunch, or dinner, offering a taste of island comfort
+                in every bite. Its simplicity belies its profound flavor, making it a favorite for locals and a must-try
+                for visitors seeking an authentic Hawaiian dining experience.
+            </div>
+            <div class="ingrid-time-container">
+                <div class="ingridient-container">
+                    <div class="ingrid-title">
+                        <h2>Ingridients for</h2>
+                        <div class="btn-group">
+                            <button class="btn" title="decrease"><i class="fa-minus fa-solid"></i></button>
+                            <p>1</p>
+                            <button class="btn" title="increase"><i class="fa-plus fa-solid"></i></button>
+                        </div>
+                    </div>
+                    <div class="ingridients">
+                        <div class="regular-ingrid">
+                            <div class="ingridient">
+                                <p class="ingrid-name">Egg</p>
+                                <p class="ingrid-count"><span class="in-num">1</span></p>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">unsalted butter</p>
+                                <p class="ingrid-count"><span class="in-num">2</span> tbsp</p>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">medium sized sweet onion (optional)</p>
+                                <p class="ingrid-count"><span class="in-num">1/2</span></p>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">sliced mushroom (optional)</p>
+                                <p class="ingrid-count"><span class="in-num">3/4</span> cup</p>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">green onions for garnishing</p>
+                                <p class="ingrid-count">A little</p>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">cooked rice</p>
+                                <p class="ingrid-count"><span class="in-num">1</span> bowl</p>
+                            </div>
+                        </div>
+                        <div class="parent-ingrid">
+                            <div class="ingridient">
+                                <p class="ingrid-name">Hamburger Patties</p>
+                                <div class="ingrid-count">
+                                    <span class="in-num">2</span>
+                                    <div class="ingrid-detail-btn">
+                                        <input type="checkbox" id="hamburger-detail-btn" title="Show Details">
+                                        <i class="fa-angle-down fa-solid"></i>
+                                        <i class="fa-angle-up fa-solid"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">Ground Beef</p>
+                                <p class="ingrid-count"><span class="in-num">1 1/2</span> lb</p>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">Worcestershire Sauce</p>
+                                <p class="ingrid-count"><span class="in-num">1</span> tbsp</p>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">Seasoning Salt</p>
+                                <p class="ingrid-count"><span class="in-num">1 1/2</span> tsp</p>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">Garlic Powder</p>
+                                <p class="ingrid-count"><span class="in-num">1</span> tsp</p>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">Black Pepper</p>
+                                <p class="ingrid-count"><span class="in-num">1/2</span> tsp</p>
+                            </div>
+                        </div>
+                        <div class="parent-ingrid">
+                            <div class="ingridient">
+                                <p class="ingrid-name">Gravy</p>
+                                <div class="ingrid-count">
+                                    <div class="ingrid-detail-btn">
+                                        <input type="checkbox" id="gravy-detail-btn" title="Show Details">
+                                        <i class="fa-angle-down fa-solid"></i>
+                                        <i class="fa-angle-up fa-solid"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">Beef Stock</p>
+                                <p class="ingrid-count"><span class="in-num">1 1/2</span> cup</p>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">Shoyu (Soy Sauce)</p>
+                                <p class="ingrid-count"><span class="in-num">4</span> tsp</p>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">Worcestershire Sauce</p>
+                                <p class="ingrid-count"><span class="in-num">1</span> tsp</p>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">Ketchup</p>
+                                <p class="ingrid-count"><span class="in-num">2</span> tsp</p>
+                            </div>
+                            <div class="ingridient">
+                                <p class="ingrid-name">Cornstarch</p>
+                                <p class="ingrid-count"><span class="in-num">5</span> tsp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="time-container">
+                    <h2>Time Estimate</h2>
+                    <div class="times">
+                        <div class="time">
+                            <p class="time-count"><span class="time-num">49</span>m</p>
+                            <p class="time-title">Total</p>
+                        </div>
+                        <div class="time">
+                            <p class="time-count"><span class="time-num">10</span>m</p>
+                            <p class="time-title">Make Patty</p>
+                        </div>
+                        <div class="time">
+                            <p class="time-count"><span class="time-num">20</span>m</p>
+                            <p class="time-title">Fry Patty</p>
+                        </div>
+                        <div class="time">
+                            <p class="time-count"><span class="time-num">5</span>m</p>
+                            <p class="time-title">Make Gravy</p>
+                        </div>
+                        <div class="time">
+                            <p class="time-count"><span class="time-num">10</span>m</p>
+                            <p class="time-title">Mushroom & Onion</p>
+                        </div>
+                        <div class="time">
+                            <p class="time-count"><span class="time-num">3</span>m</p>
+                            <p class="time-title">Fry Egg</p>
+                        </div>
+                        <div class="time">
+                            <p class="time-count"><span class="time-num">1</span>m</p>
+                            <p class="time-title">Assemble</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cook-container">
+                <h2>Instructions</h2>
+                <div class="steps">
+
+                </div>
+                <div class="conclusion">
+                    <p><i class="fa-utensil-spoon fa-solid"></i>And that is it, enjoy!</p>
+                </div>
+                <div class="footer">
+                    <p>© Jeffrey Wang 2024</p>
+                    <p>Recipe Sourced From
+                        <a href="https://onohawaiianrecipes.com/recipes/a-classic-loco-moco/">'Ono Hawaiian Recipes</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ingrid-btns.js"></script>
+    <script src="js/steps.js"></script>
+</body>
+
+</html>
