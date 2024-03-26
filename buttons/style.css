@@ -521,18 +521,65 @@ a#btn_moo img {
     position: absolute;
     transition: all 0.3s ease-in;
 }
+
 a#btn_moo img:first-of-type {
     opacity: 1;
 }
+
 a#btn_moo img:last-of-type {
     opacity: 0;
 }
-a#btn_moo:hover img{
+
+a#btn_moo:hover img {
     transform: scale(1.2);
 }
+
 a#btn_moo:hover img:first-of-type {
     opacity: 0;
 }
+
 a#btn_moo:hover img:last-of-type {
+    opacity: 1;
+}
+
+/* tesla Button Style */
+a#btn_tesla {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease-in;
+    background-color: #FFF;
+    position: relative;
+    transition: background-color 0.3s ease-in;
+}
+
+a#btn_tesla img {
+    object-fit: contain;
+    width: 140px;
+    transition: opacity 0s;
+    z-index: 1;
+    position: absolute;
+    transition: all 0.3s ease-in;
+}
+
+a#btn_tesla img:first-of-type {
+    opacity: 1;
+    z-index: 0;
+}
+
+a#btn_tesla img:last-of-type {
+    opacity: 0;
+    filter: brightness(1000);
+    z-index: 2;
+}
+
+a#btn_tesla:hover img:first-of-type {
+    width: 700%;
+}
+
+a#btn_tesla:hover img:last-of-type {
     opacity: 1;
 }
