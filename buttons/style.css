@@ -583,3 +583,38 @@ a#btn_tesla:hover img:first-of-type {
 a#btn_tesla:hover img:last-of-type {
     opacity: 1;
 }
+
+/* newyorker Button Style */
+a#btn_newyorker {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease-in;
+    background-color: #FFF;
+    position: relative;
+    transition: background-color 0.3s ease-in;
+}
+
+a#btn_newyorker img {
+    object-fit: contain;
+    width: 200px;
+    transition: opacity 0s;
+    z-index: 1;
+    position: absolute;
+    transition: all 0.3s ease-in;
+}
+
+.nyk_line {
+    margin-top: 40px;
+    width: 0px;
+    height: 3px;
+    background-color: #000;
+    transition: width 0.3s ease-in;
+}
+
+a#btn_newyorker:hover .nyk_line {
+    width: 200px;
+}
