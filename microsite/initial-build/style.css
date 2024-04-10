@@ -20,6 +20,7 @@ font-family: "Inter", sans-serif;
     --black: #111111;
     --smoke: #f0f0f0;
     --grey: #c6c6c6;
+    --general-padding: 1.875rem;
     font-family: "Roboto", sans-serif;
     /* letter-spacing: -0.3px; */
 }
@@ -58,18 +59,18 @@ a {
     z-index: 4;
     width: 100%;
     text-transform: uppercase;
-    font-size: 1.4rem;
-    padding: 1.875rem;
+    padding: var(--general-padding);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .hero-title p {
+    font-size: 1.2rem;
     width: 100%;
     color: var(--white);
     font-family: 'dune', sans-serif;
-    letter-spacing: 1.8rem;
+    letter-spacing: 1.6rem;
     text-align: center;
 }
 
@@ -123,6 +124,8 @@ a {
     margin-right: -0.75rem;
     text-align: right;
     position: relative;
+    /* backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px); */
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -141,15 +144,36 @@ a {
 }
 
 .nav a:has(input[type="radio"]:checked) {
-    background-color: var(--black);
+    background-color: var(--white);
+    color: var(--black);
+    /* background:url(./assets/images/bookmark.png) no-repeat;
+    background-size: contain; */
 }
 
-.container:has(input[title="intro"]:checked) #hero {
+.container:has(input[title="intro"]:checked) #hero-block {
     display: flex;
 }
-.container:has(input[title="origin"]:checked) #origin {
+
+.container:has(input[title="origin"]:checked) #origin-block {
     display: flex;
 }
+
+.container:has(input[title="story"]:checked) #story-block {
+    display: flex;
+}
+
+.container:has(input[title="story"]:checked) #story-block .story-cover {
+    animation: OpacityAppear 0.5s linear forwards;
+}
+
+.container:has(input[title="story"]:checked) #story-block .story-dark {
+    animation: OpacityDisappear 0.5s linear forwards;
+}
+
+.container:has(input[title="story"]:checked) #story-block .story-noise {
+    animation: NoiseOpacityDisappear 0.25s linear forwards;
+}
+
 
 /* ========== HERO ========== */
 .hero {
@@ -227,7 +251,7 @@ a {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    padding: 1.875rem;
+    padding: var(--general-padding);
     gap: 1.25rem;
     max-width: 52rem;
 }
@@ -293,8 +317,310 @@ a {
 
 .hero:has(input[type="checkbox"]:checked) .hero-cover {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .hero:has(input[type="checkbox"]:checked) .hero-noise {
     opacity: 0.1;
 }
+
+/* ========== STORY ========== */
+.story {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+}
+
+.story img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(0.8) contrast(1.2);
+}
+
+.story-noise {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") repeat;
+    z-index: 2;
+    animation: moveNoiseRight 1s linear infinite;
+    opacity: 0.2;
+    filter: brightness(0.5);
+}
+
+.story-dark {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.story-cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+@keyframes OpacityAppear {
+    from {
+        opacity: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    }
+
+    to {
+        opacity: 1;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+    }
+}
+
+@keyframes OpacityDisappear {
+    from {
+        opacity: 0.32;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes NoiseOpacityDisappear {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.story-content-container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 0;
+    padding: var(--general-padding);
+    gap: var(--general-padding);
+}
+
+.story-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--general-padding);
+    padding-bottom: 1.875rem;
+    width: 100%;
+    /* height: 100%; */
+}
+
+.story-img {
+    height: 35rem;
+    width: 25rem;
+    background: url('./assets/images/illust1.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.story-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.25rem;
+    max-width: 52rem;
+}
+
+.story-text p {
+    font-size: 1.4rem;
+    font-weight: 200;
+    color: var(--white);
+    text-align: left;
+    overflow: hidden;
+    margin-bottom: 0rem;
+    text-align: justify;
+    display: none;
+}
+
+@media screen and (max-width: 797px) {
+    .story-content-container {
+        justify-content: center;
+    }
+
+    .story-content {
+        flex-direction: column;
+        max-width: 52rem;
+    }
+
+    .story-text {
+        height: auto;
+    }
+
+    .story-img {
+        height: 25rem;
+        width: 100%;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    gap: 0.5rem;
+    height: 3rem;
+}
+
+.pagination::-webkit-scrollbar {
+    display: none;
+}
+
+.pag-btn {
+    font-size: 1rem;
+    position: relative;
+    padding: 0.6rem 1.25rem;
+    font-family: 'dune', sans-serif;
+    border: 1px solid var(--white);
+    border-radius: 100px;
+}
+
+.pag-line {
+    width: 0.75rem;
+    height: 1px;
+    background-color: var(--white);
+}
+
+.pag-btn input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: 3;
+}
+
+.pag-btn:has(input[type="radio"]:checked) {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.story-content-container:has(input[id="pag1"]:checked) .story-img {
+    background: url('./assets/images/illust1.webp') center center no-repeat;
+    background-size: cover;
+}
+
+.story-content-container:has(input[id="pag2"]:checked) .story-img {
+    background: url('./assets/images/illust2.webp') center center no-repeat;
+    background-size: cover;
+}
+
+.story-content-container:has(input[id="pag3"]:checked) .story-img {
+    background: url('./assets/images/illust3.webp') center center no-repeat;
+    background-size: cover;
+}
+
+.story-content-container:has(input[id="pag4"]:checked) .story-img {
+    background: url('./assets/images/illust4.webp') center center no-repeat;
+    background-size: cover;
+}
+
+.story-content-container:has(input[id="pag5"]:checked) .story-img {
+    background: url('./assets/images/illust5.webp') center center no-repeat;
+    background-size: cover;
+}
+
+.story-content-container:has(input[id="pag6"]:checked) .story-img {
+    background: url('./assets/images/illust6.webp') center center no-repeat;
+    background-size: cover;
+}
+
+.story-content-container:has(input[id="pag7"]:checked) .story-img {
+    background: url('./assets/images/illust7.webp') center center no-repeat;
+    background-size: cover;
+}
+
+.story-content-container:has(input[id="pag8"]:checked) .story-img {
+    background: url('./assets/images/illust8.webp') center center no-repeat;
+    background-size: cover;
+}
+
+.story-content-container:has(input[id="pag9"]:checked) .story-img {
+    background: url('./assets/images/illust9.webp') center center no-repeat;
+    background-size: cover;
+}
+
+.story-content-container:has(input[id="pag10"]:checked) .story-img {
+    background: url('./assets/images/illust10.webp') center center no-repeat;
+    background-size: cover;
+}
+
+.story-content-container:has(input[id="pag1"]:checked) .story-text p:first-of-type {
+    display: block;
+}
+
+.story-content-container:has(input[id="pag2"]:checked) .story-text p:nth-of-type(2) {
+    display: block;
+}
+
+.story-content-container:has(input[id="pag3"]:checked) .story-text p:nth-of-type(3) {
+    display: block;
+}
+
+.story-content-container:has(input[id="pag4"]:checked) .story-text p:nth-of-type(4) {
+    display: block;
+}
+
+.story-content-container:has(input[id="pag5"]:checked) .story-text p:nth-of-type(5) {
+    display: block;
+}
+
+.story-content-container:has(input[id="pag6"]:checked) .story-text p:nth-of-type(6) {
+    display: block;
+}
+
+.story-content-container:has(input[id="pag7"]:checked) .story-text p:nth-of-type(7) {
+    display: block;
+}
+
+.story-content-container:has(input[id="pag8"]:checked) .story-text p:nth-of-type(8) {
+    display: block;
+}
+
+.story-content-container:has(input[id="pag9"]:checked) .story-text p:nth-of-type(9) {
+    display: block;
+}
+
+.story-content-container:has(input[id="pag10"]:checked) .story-text p:nth-of-type(10) {
+    display: block;
+}
+
+/* ========== CHARACTERS ========== */
