@@ -174,6 +174,22 @@ a {
     animation: NoiseOpacityDisappear 0.25s linear forwards;
 }
 
+.container:has(input[title="characters"]:checked) #characters-block {
+    display: flex;
+}
+
+.container:has(input[title="characters"]:checked) #characters-block .chara-cover {
+    animation: OpacityAppear 0.5s linear forwards;
+}
+
+.container:has(input[title="characters"]:checked) #characters-block .chara-dark {
+    animation: OpacityDisappear 0.5s linear forwards;
+}
+
+.container:has(input[title="characters"]:checked) #characters-block .chara-noise {
+    animation: NoiseOpacityDisappear 0.25s linear forwards;
+}
+
 
 /* ========== HERO ========== */
 .hero {
@@ -490,9 +506,8 @@ a {
 
 .pagination {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
+    max-width: 100%;
     overflow-x: scroll;
     scrollbar-width: none;
     gap: 0.5rem;
@@ -510,6 +525,7 @@ a {
     font-family: 'dune', sans-serif;
     border: 1px solid var(--white);
     border-radius: 100px;
+    white-space: nowrap;
 }
 
 .pag-line {
@@ -624,3 +640,217 @@ a {
 }
 
 /* ========== CHARACTERS ========== */
+.characters {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+}
+
+.characters img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(0.8) contrast(1.2);
+}
+
+.chara-noise {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") repeat;
+    z-index: 2;
+    animation: moveNoiseRight 1s linear infinite;
+    opacity: 0.2;
+    filter: brightness(0.5);
+}
+
+.chara-dark {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.chara-cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.chara-content-container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 0;
+    padding: var(--general-padding);
+    gap: var(--general-padding);
+}
+
+.chara-content-slider {
+    width: 100vw;
+    height: 100%;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+.chara-content-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.chara-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: var(--general-padding);
+    padding-bottom: 1.875rem;
+    height: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 1.875rem;
+    padding-top: 3.5rem;
+}
+
+.chara-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 28rem;
+    height: 100%;
+    gap: 0.8rem;
+    position: relative;
+}
+
+.chara-img-blur {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+    border-radius: 1rem;
+}
+
+.chara-img {
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center !important;
+    transition: all 0.5s ease-in-out;
+}
+
+.chara-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 100%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    z-index: 3;
+    padding: 1rem;
+    scrollbar-width: none;
+}
+
+.chara-text::-webkit-scrollbar {
+    display: none;
+}
+
+.chara-text:first-of-type {
+    position: absolute;
+}
+
+.chara-text h3 {
+    width: 100%;
+    font-size: 1.75rem;
+    text-align: left;
+    font-weight: 400;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.chara-text p {
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: var(--white);
+    text-align: left;
+    overflow: hidden;
+    margin-bottom: 0rem;
+    text-align: justify;
+    display: none;
+}
+
+.chara-text p:first-of-type {
+    display: block;
+}
+
+.chara-more {
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: var(--white);
+    text-align: left;
+    border-bottom: 0.8px solid var(--white);
+    position: relative;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.chara-more input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: 3;
+}
+
+.chara-card:has(input[type="checkbox"]:checked) .chara-text p {
+    display: block;
+}
+
+.chara-card:has(input[type="checkbox"]:checked) .chara-text {
+    position: absolute;
+    bottom: 0;
+}
+
+.chara-card:has(input[type="checkbox"]:checked) .chara-img-blur {
+    opacity: 1;
+}
+
+.chara-card:has(input[type="checkbox"]:checked) .chara-img {
+    opacity: 1;
+    filter: grayscale(100%);
+}
