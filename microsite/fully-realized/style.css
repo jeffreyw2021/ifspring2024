@@ -753,10 +753,15 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 28rem;
+    width: 448px;
     height: 100%;
     gap: 0.8rem;
     position: relative;
+}
+@media screen and (max-width: 600px) {
+    .chara-card {
+        width: calc(100vw - 3.75rem - 3.75rem);
+    }
 }
 
 .chara-img-blur {
