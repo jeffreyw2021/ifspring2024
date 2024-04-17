@@ -176,6 +176,7 @@ a {
 
 .container:has(input[title="characters"]:checked) #characters-block {
     display: flex;
+    position: relative;
 }
 
 .container:has(input[title="characters"]:checked) #characters-block .chara-cover {
@@ -731,9 +732,40 @@ a {
     overflow-x: scroll;
     scrollbar-width: none;
     display:none;
+    position: relative;
+    scroll-behavior: smooth;
 }
 .chara-content-slider::-webkit-scrollbar {
     display: none;
+}
+.chara-carousel{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    z-index: 10;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+}
+.chara-carousel-btn{
+    height: 4.5rem;
+    aspect-ratio: 1/1;
+    background: rgb(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chara-carousel-btn i{
+    color: #fff;
+    font-size: 2rem;
+}
+.chara-carousel-btn:hover{
+    background: rgb(255, 255, 255, 0.8);
+}
+.chara-carousel-btn:hover i{
+    color: #000;
 }
 
 .chara-content {

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dune - Microsite Fully Realized</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css">
 </head>
 
 <body>
@@ -19,10 +20,10 @@
                 <img src="./assets/icons/burger.svg" alt="Hamburger Icon">
                 <input type="checkbox" id="nav-toggle" title="nav-toggle">
                 <div class="nav">
-                    <a>INTRO<input type="radio" name="nav" id="intro" title="intro" checked></a>
+                    <a>INTRO<input type="radio" name="nav" id="intro" title="intro"></a>
                     <a>ORIGIN<input type="radio" name="nav" id="origin" title="origin"></a>
                     <a>STORY<input type="radio" name="nav" id="story" title="story"></a>
-                    <a>CHARACTERS<input type="radio" name="nav" id="characters" title="characters"></a>
+                    <a>CHARACTERS<input type="radio" name="nav" id="characters" title="characters" checked></a>
                 </div>
             </div>
         </div>
@@ -369,6 +370,14 @@
             <img src="./assets/images/poster1.jpg" alt="Hero Image">
         </div>
         <div class="characters" id="characters-block">
+            <div class="chara-carousel">
+                <div class="chara-carousel-btn" id="forward-btn">
+                    <i class="fas fa-angle-left"></i>
+                </div>
+                <div class="chara-carousel-btn" id="backward-btn">
+                    <i class="fas fa-angle-right"></i>
+                </div>
+            </div>
             <div class="chara-content-container">
                 <div class="chara-content-slider" id="atreides-cards">
                     <div class="chara-content">
@@ -637,11 +646,11 @@
                                     the most accomplished adept in the Bene Gesserit—valuable more for the fact that she
                                     was a daughter of Shaddam IV than for any other reason; often too proud to exert
                                     herself in extending her capabilities."</p>
-                                    <div class="chara-more">
-                                        <span>READ MORE</span>
-                                        <span>CLOSE</span>
-                                        <input type="checkbox" id="read-more" title="read-more">
-                                    </div>
+                                <div class="chara-more">
+                                    <span>READ MORE</span>
+                                    <span>CLOSE</span>
+                                    <input type="checkbox" id="read-more" title="read-more">
+                                </div>
                             </div>
                         </div>
                         <div class="chara-card">
@@ -787,12 +796,6 @@
                     <div class="pag-btn">Fremen
                         <input type="radio" name="faction" id="fremen" title="fremen">
                     </div>
-                    <!-- <div class="pag-btn">Bene Gesserit
-                        <input type="radio" name="faction" id="gesserit" title="gesserit">
-                    </div>
-                    <div class="pag-btn">Smugglers
-                        <input type="radio" name="faction" id="smuggler" title="smuggler">
-                    </div> -->
                 </div>
             </div>
             <div class="chara-dark"></div>
@@ -801,6 +804,8 @@
             <img src="./assets/images/poster1.jpg" alt="Hero Image">
         </div>
     </div>
+
+    <script src="./carousel.js"></script>
 </body>
 
 </html>
