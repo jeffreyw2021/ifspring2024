@@ -814,24 +814,7 @@
     </div>
 
     <script src="./carousel.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var heroLearnMore = document.querySelector('#hero-block input[type="checkbox"]');
-            var originLearnMore = document.querySelector('#origin-block input[type="checkbox"]');
-            var footer = document.querySelector('.footer');
-
-            function toggleFooterVisibility() {
-                if (heroLearnMore.checked || originLearnMore.checked) {
-                    footer.style.display = 'none';
-                } else {
-                    footer.style.display = 'flex';
-                }
-            }
-
-            heroLearnMore.addEventListener('change', toggleFooterVisibility);
-            originLearnMore.addEventListener('change', toggleFooterVisibility);
-        });
-    </script>
+    <script src="./checkbox-control.js"></script>
 
 </body>
 
