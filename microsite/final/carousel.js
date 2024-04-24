@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('change', updateSliderVisibility);
     });
 
-    updateSliderVisibility();
+    updateSliderVisibility();  
 
     function scrollSlider(direction) {
         const visibleSlider = document.querySelector('.chara-content-slider[style*="display: block"]');
@@ -36,8 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
     backwardButton.addEventListener('click', () => scrollSlider(1));
 
     function updateCarouselButtonsVisibility(slider) {
+        const atreidesChecked = document.getElementById('atreides').checked;
         const isOverflowing = slider.scrollWidth > slider.clientWidth;
-        forwardButton.style.display = isOverflowing ? 'flex' : 'none';
-        backwardButton.style.display = isOverflowing ? 'flex' : 'none';
+        if (atreidesChecked || isOverflowing) {
+            forwardButton.style.display = 'flex';
+            backwardButton.style.display = 'flex';
+        } else {
+            forwardButton.style.display = 'none';
+            backwardButton.style.display = 'none';
+        }
     }
 });
