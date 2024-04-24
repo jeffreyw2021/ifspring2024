@@ -808,11 +808,31 @@
     </div>
 
     <div class="footer">
-            <p>© 2024 Jeffrey Wang | Creative Director: Max Douglass</p>
-            <p>Information sourced from Wikipedia: <a href="https://en.wikipedia.org/wiki/Dune_(novel)#Characters">Dune (Novel)</a></p>
+        <p>© 2024 Jeffrey Wang | Creative Director: Max Douglass</p>
+        <p>Information sourced from Wikipedia: <a href="https://en.wikipedia.org/wiki/Dune_(novel)#Characters">Dune
+                (Novel)</a></p>
     </div>
 
     <script src="./carousel.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var heroLearnMore = document.querySelector('#hero-block input[type="checkbox"]');
+            var originLearnMore = document.querySelector('#origin-block input[type="checkbox"]');
+            var footer = document.querySelector('.footer');
+
+            function toggleFooterVisibility() {
+                if (heroLearnMore.checked || originLearnMore.checked) {
+                    footer.style.display = 'none';
+                } else {
+                    footer.style.display = 'flex';
+                }
+            }
+
+            heroLearnMore.addEventListener('change', toggleFooterVisibility);
+            originLearnMore.addEventListener('change', toggleFooterVisibility);
+        });
+    </script>
+
 </body>
 
 </html>
